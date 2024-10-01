@@ -17,7 +17,7 @@ int	ft_putstr(char *str)
 	int	count;
 
 	if (!str)
-		return (0);
+		return (ft_putstr("(null)"));
 	count = 0;
 	while (str[count])
 	{

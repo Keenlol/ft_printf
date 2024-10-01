@@ -35,6 +35,8 @@ int	ft_putptr(void *ptr)
 {
 	uintptr_t	num;
 
+	if (!ptr)
+		return (ft_putstr("(nil)"));
 	num = (uintptr_t) ptr;
 	return (ft_putstr("0x") + puthex_ptr(num));
 }

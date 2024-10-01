@@ -12,6 +12,17 @@
 
 #include "ft_printf.h"
 
+// static int  check(const char *set, char c)
+// {
+// 	while (*set)
+// 	{
+// 		if (c == *set)
+// 			return (1);
+// 		set++;
+// 	}
+// 	return (0);
+// }
+
 static int	conversion(char c, va_list args)
 {
 	int	count;
@@ -50,7 +61,10 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
+			// if (check("%%cspuiuxX", *str))
 			final_count += conversion(*str, args);
+			// else
+			// 	return (-1);
 		}
 		else
 		{

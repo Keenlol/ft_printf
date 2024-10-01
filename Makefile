@@ -1,4 +1,4 @@
-NAME			= libftprintf.a
+NAME		= ft_printf.a
 
 SRCS 	   = ft_printf.c \
 			 ft_putchar.c \
@@ -10,7 +10,7 @@ SRCS 	   = ft_printf.c \
 
 # B_SRCS     = 
 
-HEADERS 		= ft_printf.h
+HEADERS 		= /ft_printf.h
 
 OBJS 			= $(SRCS:.c=.o)
 
@@ -35,7 +35,8 @@ all:			$(NAME)
 				$(CC) -I $(HEADERS) $< -o $(<:.c=.o) -c $(FLAGS)
 
 clean:
-				$(RM) $(OBJS) $(B_OBJS)
+				$(RM) $(OBJS)
+#				$(RM) $(OBJS) $(B_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)

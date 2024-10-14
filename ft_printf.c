@@ -6,7 +6,7 @@
 /*   By: ctongpa <ctongpa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 11:49:21 by ctongpa           #+#    #+#             */
-/*   Updated: 2024/09/29 16:39:34 by ctongpa          ###   ########.fr       */
+/*   Updated: 2024/10/14 14:56:37 by ctongpa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,16 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*str == '%')
 		{
-			str++;
-			if (check("%%cspuiduxX", *str))
+			if (check("%%cspuiduxX", *(str + 1)))
+			{
+				str++;
 				final_count += conversion(*str, args);
+			}
 			else
-				return (-1);
+				final_count += ft_putchar(*str);
 		}
 		else
-		{
 			final_count += ft_putchar(*str);
-		}
 		str++;
 	}
 	va_end(args);
